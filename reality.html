@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Credibility Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>News Credibility Checker</h1>
+        <p>Verify the truthfulness of news articles and online content.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Check the Credibility of an Article</h2>
+            <form id="credibility-form">
+                <label for="url">Article URL:</label>
+                <input type="url" id="url" name="url" required placeholder="Enter the article URL">
+                
+                <label for="source">Source Name:</label>
+                <input type="text" id="source" name="source" required placeholder="Enter the source name">
+
+                <button type="submit">Check Credibility</button>
+            </form>
+        </section>
+
+        <section id="results">
+            <h2>Results</h2>
+            <p id="result-message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 News Credibility Checker. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('credibility-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const url = document.getElementById('url').value;
+            const source = document.getElementById('source').value;
+            
+            // Here you would typically call an API to check credibility
+            // For this example, we'll simulate a result
+            const result = Math.random() > 0.5 ? 'This article is likely credible.' : 'This article may not be credible.';
+            
+            document.getElementById('result-message').innerText = result;
+        });
+    </script>
+</body>
+</html>

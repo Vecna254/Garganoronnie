@@ -1,0 +1,30 @@
+document.getElementById('credibility-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const url = document.getElementById('url').value;
+    const source = document.getElementById('source').value;
+    
+    // Simulated credibility check
+    checkCredibility(url, source);
+});
+
+function checkCredibility(url, source) {
+    // Simulating an API call with a timeout
+    setTimeout(() => {
+        // Simulate a credibility score
+        const credibilityScore = Math.random();
+        let resultMessage;
+
+        // Determine result based on simulated score
+        if (credibilityScore > 0.7) {
+            resultMessage = '✅ This article is likely credible.';
+        } else if (credibilityScore > 0.4) {
+            resultMessage = '⚠️ This article has mixed credibility.';
+        } else {
+            resultMessage = '❌ This article may not be credible.';
+        }
+
+        // Display the result message
+        document.getElementById('result-message').innerText = resultMessage;
+    }, 1000); // Simulating network delay of 1 second
+}
